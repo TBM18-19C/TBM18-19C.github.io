@@ -12,6 +12,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		
+
 	</head>
 	<body class="is-preload">
 		<div id="demo"  style="text-align: center; color:black; font-weight: bold; background-color:red"></div>
@@ -132,6 +134,7 @@
 
 	</body>
 	
+	<script src="confetti.js"></script>
 	<script>
 	// Set the date we're counting down to
 	var countDownDate = new Date("Jun 18, 2019 20:00:00").getTime();
@@ -158,6 +161,14 @@
 		if (distance < 0) {
 			clearInterval(x);
 			document.getElementById("demo").innerHTML = "Gratulation an alle die bestanden haben und allen anderen viel Erfolg beim Rekurs!";
+			
+			if(!confetti.isRunning()) {
+				confetti.maxCount = 200;
+				confetti.particleSpeed = 3;
+
+				confetti.start();
+			}
+			
 		}
 	}, 1000);
 </script>
